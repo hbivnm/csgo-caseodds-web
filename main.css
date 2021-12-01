@@ -1,0 +1,178 @@
+/* Font import, font set and color */
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,700&amp;display=swap&amp;subset=cyrillic,latin-ext");
+
+html,
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	font-weight: lighter;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: lighter;
+	margin-top: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+select,
+option {
+	color: white;
+	font-family: "Rubik";
+}
+
+select,
+option {
+	background-color: #303030;
+	color: wheat;
+	font-weight: bold;
+}
+
+p,
+li {
+	font-size: 14.5px;
+}
+
+a:link {
+    text-decoration: none;
+}
+  
+a:visited {
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+a:active {
+    text-decoration: underline;
+}
+
+button {
+	background-color: #303030;
+	border: 1px solid #a2a9b1;
+	color: wheat;
+	cursor: pointer;
+}
+
+hr {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	margin: -10px;
+	margin-bottom: 10px;
+}
+
+input {
+	background-color: #303030;
+	border: 1px solid #a2a9b1;
+	color: wheat;
+	width: 100px;
+}
+
+.input-perc {
+	width: 50px;
+}
+
+.input-result {
+	margin-left: 20px;
+}
+
+.bg-image {
+	background-image: url(images/bg_1.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.content-wrapper {
+	background-color: rgba(0, 0, 0, 0.85);
+	border: 1px solid #ffcc00;
+	border-image: linear-gradient(#ffcc00 0%, #000000 20%, #000000 80%, #ffcc00 100%)1;
+	margin: 30px;
+	padding: 25px;
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+.footer {
+	text-align: center;
+	padding: 12.5px;
+}
+
+.footer-content {
+	font-size: 12px;
+}
+
+.in-text-img {
+	width: 32px;
+	height: 32px;
+}
+
+.medium-img {
+	width: 64px;
+	height: 64px;
+}
+
+.consumergrade {
+	color: rgb(176, 195, 217);
+}
+.industrialgrade {
+	color: rgb(94, 152, 217);
+}
+.milspec {
+	color: rgb(75, 105, 255);
+}
+.restricted {
+	color: rgb(136, 71, 255);
+}
+.classified {
+	color: rgb(211, 44, 230);
+}
+.covert {
+	color: rgb(235, 75, 75);
+}
+.exceedinglyrare {
+	color: rgb(255, 215, 0);
+}
+
+.warning-text {
+	font-size: 24px;
+	color: red;
+}
+
+.item-table-wrapper {
+	margin-top: 1em;
+}
+
+#item-table {
+	border: 1px solid #a2a9b1;
+	border-collapse: collapse;
+}
+
+.color-damage {
+	color: #e5c962;
+	font-weight: bold;
+}
+
+.color-heal {
+	color: #9ce562;
+	font-weight: bold;
+}
+
+.color-utility {
+	color: #95cde5;
+	font-weight: bold;
+}
