@@ -22,7 +22,7 @@
             <p>
                 This webpage serves the purpose of showing and visualizing Counter-Strike: Global Offensive
                 case/capsule/package odds, in order to give the user a better overview of the actual odds of getting an
-                item of sought rarity.
+                item of sought rarity. This webpage will somewhat also address common misinformation such as the probability to get an item with StatTrak™ is 10% (this is not completely true.)
             </p>
             <p>
                 The data shown on this webpage is based on a blog <a
@@ -31,7 +31,27 @@
                 cases/capsules/packages released post-2017.
             </p>
             <p>
-                It is important to understand that probability shown under "Odds by the numbers" are the outcomes of opening an almost immeasurable sample size. For an even more accurate representation of the probability of opening a certain rarity, see "Theoretical probability." (This section doesn't exist, MIGHT be added in the future!)
+                It is important to understand that probability shown under "Odds by the numbers" are the outcomes of <span class="cosmic">cosmic</span> sample sizes. For an even more accurate representation of the probability of opening a certain rarity, see "Theoretical probability." (This section doesn't exist, MIGHT be added in the future!)
+            </p>
+        </div>
+        <div class="section">
+            <h2>Ratio of probabilities</h2>
+            <hr />
+            <p>
+                <ul>
+                    <li><span class="exceedinglyrare">Exceedingly Rare Item</span> : <span class="covert">Covert</span> - 2:5</li>
+                    <li><span class="covert">Covert</span> : <span class="classified">Classified</span> - 1:5</li>
+                    <li><span class="classified">Classified</span> : <span class="restricted">Restricted</span> - 1:5</li>
+                    <li><span class="restricted">Restricted</span> : <span class="milspec">Mil-Spec</span> - 1:5</li>
+                </ul>
+            </p>
+            <p>
+                <ul>
+                    <li>Non-StatTrak™ : <span class="stattrak">StatTrak™</span> - 1:10</li>
+                </ul>
+            </p>
+            <p>
+                It is widely accepted that the probability to get an item with StatTrak™ is 10%, however this is not the case. As pointed out in the blog post by Perfect World the ratio of Non-StatTrak™ to StatTrak™ is 1:10, making the probability of turning the item into a StatTrak™ version ~9.0909%.
             </p>
         </div>
         <div class="section" id="odds-number">
@@ -42,8 +62,9 @@
                     <select id="select-container-type">
                         <option disabled selected value="default">SELECT CONTAINER TYPE</option>
                         <option class="option" value="case">Case</option>
-                        <option class="option" value="xrayp250package">X-Ray P250 Package</option>
                         <option class="option" value="souvenirpackages">Souvenir Packages</option> 
+                        <option class="option" value="xrayp250package">X-Ray P250 Package</option>
+                        <option class="option" value="pincapsules">Collectible Pin Capsules</option>
                         <!--<option class="option" value="stickercapsule">Sticker Capsule</option>
                         <option class="option" value="autographcapsule">Autograph Capsule</option>-->
                     </select>
@@ -163,6 +184,28 @@
                         <tr>
                             <td class="bold consumergrade">Consumer Grade</td>
                             <td class="table-odds" id="table-prob-consumergrade-souvenir"></td>
+                        </tr>
+                    </table>
+                    <table id="table-pin">
+                        <tr>
+                            <th>Rarity</th>
+                            <th>Probability</th>
+                        </tr>
+                        <tr>
+                            <td class="bold covert">Extraordinary</td>
+                            <td class="table-odds" id="table-prob-extraordinary-pin"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold classified">Exotic</td>
+                            <td class="table-odds" id="table-prob-exotic-pin"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold restricted">Remarkable</td>
+                            <td class="table-odds" id="table-prob-remarkable-pin"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold milspec">High Grade</td>
+                            <td class="table-odds" id="table-prob-highgrade-pin"></td>
                         </tr>
                     </table>
                 </div>

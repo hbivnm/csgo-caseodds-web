@@ -158,6 +158,10 @@ table {
     display: none;
 }
 
+#table-pin {
+    display: none;
+}
+
 .table-odds {
     color: white;
 }
