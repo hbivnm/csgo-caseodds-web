@@ -31,6 +31,7 @@ select,
 option {
 	color: white;
 	font-family: "Rubik";
+	margin-bottom: 10px;
 }
 
 select,
@@ -38,6 +39,7 @@ option {
 	background-color: #303030;
 	color: wheat;
 	font-weight: bold;
+	font-size: 20px;
 }
 
 p,
@@ -45,20 +47,24 @@ li {
 	font-size: 14.5px;
 }
 
+a {
+	color: #ffcc00;
+}
+
 a:link {
-    text-decoration: none;
+	text-decoration: none;
 }
-  
+
 a:visited {
-    text-decoration: none;
+	text-decoration: none;
 }
-  
+
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
-  
+
 a:active {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 button {
@@ -74,11 +80,91 @@ hr {
 	margin-bottom: 10px;
 }
 
+th {
+    color: white;
+    padding-bottom: 2.5px;
+}
+
+td {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+td, th {
+    width: 180px;
+}
+
 input {
 	background-color: #303030;
 	border: 1px solid #a2a9b1;
 	color: wheat;
 	width: 100px;
+}
+
+table {
+    margin-top: 180px;
+}
+
+#odds-number {
+	height: 500px;
+}
+
+#select-wrapper {
+    float: left;
+    width: 40%;
+}
+
+#select-container-type {
+    display: block;
+}
+
+#select-dynamic-wrapper {
+    display: none;
+    display: block;
+}
+
+#select-container {
+
+}
+
+#select-souvenir-tier-wrapper {
+    
+}
+
+#select-souvenir-tier {
+    display: none;
+}
+
+#img-container {
+    
+}
+
+#table-wrapper {
+    float: left;
+    width: 50%;
+    height: 440px;
+}
+
+#table-case {
+    display: none;
+}
+
+#table-xray {
+    display: none;
+}
+
+#table-souvenir {
+    display: none;
+}
+
+.table-odds {
+    color: white;
+}
+
+.linked-domain {
+	font-size: 10.35px;
+	color: #636363;
 }
 
 .input-perc {
@@ -90,7 +176,7 @@ input {
 }
 
 .bg-image {
-	background-image: url(images/bg_1.jpg);
+	background-image: url(images/backgrounds/bg_1.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -99,7 +185,13 @@ input {
 .content-wrapper {
 	background-color: rgba(0, 0, 0, 0.85);
 	border: 1px solid #ffcc00;
-	border-image: linear-gradient(#ffcc00 0%, #000000 20%, #000000 80%, #ffcc00 100%)1;
+	border-image: linear-gradient(
+			#ffcc00 0%,
+			#000000 20%,
+			#000000 80%,
+			#ffcc00 100%
+		)
+		1;
 	margin: 30px;
 	padding: 25px;
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
@@ -126,8 +218,15 @@ input {
 	height: 64px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.stattrak {
+    color: rgb(207, 106, 50)
+}
 .consumergrade {
-	color: rgb(176, 195, 217);
+    color: rgb(176, 195, 217);
 }
 .industrialgrade {
 	color: rgb(94, 152, 217);
@@ -146,6 +245,22 @@ input {
 }
 .exceedinglyrare {
 	color: rgb(255, 215, 0);
+}
+
+.factorynew {
+    color: rgb(0, 128, 0);
+}
+.minimalwear {
+    color: rgb(92, 184, 92);
+}
+.fieldtested {
+    color: rgb(240, 173, 78);
+}
+.wellworn {
+    color: rgb(217, 83, 79);
+}
+.battlescarred {
+    color: rgb(153, 58, 56);
 }
 
 .warning-text {

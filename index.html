@@ -1,55 +1,187 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>CS:GO Case Odds</title>
-		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-		<script type="module" src="scripts/background.js"></script>
-	</head>
 
-	<body class="bg-image">
-		<div class="content-wrapper">
-			<h1>Counter-Strike: Global Offensive Case Odds</h1>
-			<div class="section">
-				<h2>General info</h2>
-				<hr />
-				<p class="warning-text">
-					Website is a WIP.
-				</p>
-				<p>
-					This webpage serves the purpose of showing and visualizing Counter-Strike: Global Offensive case/capsule/package odds, in order to give the user a better overview of the actual odds of getting an item of sought rarity.
-				</p>
-				<p>
-					The data shown on this webpage is based on a blog <a href="https://www.csgo.com.cn/news/gamebroad/20170911/206155.shtml" target="_blank">post</a> from 2017 by Perfect World. The same data is used for cases/capsules/packages released post-2017.
-				</p>
-			</div>
-			<div class="section">
-				<h2>Odds by the numbers</h2>
-				<hr />
-				<p>
-					<select id="select-container-type">
-						<option disabled selected value="default">SELECT CONTAINER TYPE</option>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CS:GO Case Odds</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script type="module" src="scripts/script.js"></script>
+</head>
+
+<body class="bg-image">
+    <div class="content-wrapper">
+        <h1>Counter-Strike: Global Offensive Case Odds</h1>
+        <div class="section">
+            <h2>General info</h2>
+            <hr />
+            <p class="warning-text">
+                Website is a WIP. Priority is to fix case odds, then later on add Souvenir Package odds and last Sticker Capsule odds.
+            </p>
+            <p>
+                This webpage serves the purpose of showing and visualizing Counter-Strike: Global Offensive
+                case/capsule/package odds, in order to give the user a better overview of the actual odds of getting an
+                item of sought rarity.
+            </p>
+            <p>
+                The data shown on this webpage is based on a blog <a
+                    href="https://www.csgo.com.cn/news/gamebroad/20170911/206155.shtml" target="_blank">post</a> <span
+                    class="linked-domain">[csgo.com.cn]</span> from 2017 by Perfect World. The same data is used for
+                cases/capsules/packages released post-2017.
+            </p>
+            <p>
+                It is important to understand that probability shown under "Odds by the numbers" are the outcomes of opening an almost immeasurable sample size. For an even more accurate representation of the probability of opening a certain rarity, see "Theoretical probability." (This section doesn't exist, MIGHT be added in the future!)
+            </p>
+        </div>
+        <div class="section" id="odds-number">
+            <h2>Odds by the numbers</h2>
+            <hr />
+            <p>
+                <div id="select-wrapper">
+                    <select id="select-container-type">
+                        <option disabled selected value="default">SELECT CONTAINER TYPE</option>
                         <option class="option" value="case">Case</option>
-                        <option class="option" value="souvenirpackage">Souvenir Package</option>
-                        <option class="option" value="stickercapsule">Sticker Capsule</option>
-                        <option class="option" value="autographcapsule">Autograph Capsule</option>
-					</select>
-				</p>
-			</div>
-			<div class="section">
-				<h2>Odds visualized</h2>
-				<hr />
-				<p>
-					Nothing here ZULUL
-				</p>
-			</div>
-		</div>
-		<div class="content-wrapper footer">
-			<p class="footer-content">
-				Game content, images, names and etc. are trademarks and copyrights of their respective publisher and its licensors. All rights reserved.<br />This site is NOT affiliated with the game publisher.
-			</p>
-		</div>
-	</body>
+                        <option class="option" value="xrayp250package">X-Ray P250 Package</option>
+                        <option class="option" value="souvenirpackages">Souvenir Packages</option> 
+                        <!--<option class="option" value="stickercapsule">Sticker Capsule</option>
+                        <option class="option" value="autographcapsule">Autograph Capsule</option>-->
+                    </select>
+                    <br />
+                    <div id="select-souvenir-tier-wrapper">
+                        <select id="select-souvenir-tier">
+                            <option disabled selected value="default">SELECT COLLECTION</option>
+                            <option class="option" value="CIMRC">2018 Inferno Collection</option>
+                            <option class="option" value="CIMRC">2018 Nuke Collection</option>
+                            <option class="option" value="CIMRCC">2021 Dust 2 Collection</option>
+                            <option class="option" value="CIMRCC">2021 Mirage Collection</option>
+                            <option class="option" value="CIMRCC">2021 Vertigo Collection</option>
+                            <option class="option" value="CIMRCC">Ancient Collection</option>
+                            <option class="option" value="IMR">Cache Collection</option>
+                            <option class="option" value="CIMRCC">Cobblestone Collection</option>
+                            <option class="option" value="CIMRC">Dust 2 Collection</option>
+                            <option class="option" value="CIM">Inferno Collection</option>
+                            <option class="option" value="CIMR">Mirage Collection</option>
+                            <option class="option" value="CIMR">Nuke Collection</option>
+                            <option class="option" value="CIMRC">Overpass Collection</option>
+                            <option class="option" value="CIMR">Train Collection</option>
+                            <option class="option" value="CIMR">Vertigo Collection</option>
+                        </select>
+                    </div>
+                    <img id="img-container" src="" />
+                </div>
+                <div id="table-wrapper">
+                    <table id="table-case">
+                        <tr>
+                            <th>Rarity</th>
+                            <th>Probability</th>
+                            <th><span class="stattrak">StatTrak™</span> Probability</th>
+                        </tr>
+                        <tr>
+                            <td class="bold exceedinglyrare">Exceedingly Rare Item</td>
+                            <td class="table-odds" id="table-prob-exceedinglyrare"></td>
+                            <td class="table-odds" id="table-prob-exceedinglyrare-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold covert">Covert</td>
+                            <td class="table-odds" id="table-prob-covert"></td>
+                            <td class="table-odds" id="table-prob-covert-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold classified">Classified</td>
+                            <td class="table-odds" id="table-prob-classified"></td>
+                            <td class="table-odds" id="table-prob-classified-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold restricted">Restricted</td>
+                            <td class="table-odds" id="table-prob-restricted"></td>
+                            <td class="table-odds" id="table-prob-restricted-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold milspec">Mil-Spec</td>
+                            <td class="table-odds" id="table-prob-milspec"></td>
+                            <td class="table-odds" id="table-prob-milspec-stattrak"></td>
+                        </tr>
+                    </table>
+                    <table id="table-xray">
+                        <tr>
+                            <th>Exterior</th>
+                            <th>Probability</th>
+                            <th><span class="stattrak">StatTrak™</span> Probability</th>
+                        </tr>
+                        <tr>
+                            <td class="factorynew">Factory New</td>
+                            <td class="table-odds" id="table-prob-factorynew"></td>
+                            <td class="table-odds" id="table-prob-factorynew-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="minimalwear">Minimal Wear</td>
+                            <td class="table-odds" id="table-prob-minimalwear"></td>
+                            <td class="table-odds" id="table-prob-minimalwear-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldtested">Field-Tested</td>
+                            <td class="table-odds" id="table-prob-fieldtested"></td>
+                            <td class="table-odds" id="table-prob-fieldtested-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="wellworn">Well-Worn</td>
+                            <td class="table-odds" id="table-prob-wellworn"></td>
+                            <td class="table-odds" id="table-prob-wellworn-stattrak"></td>
+                        </tr>
+                        <tr>
+                            <td class="battlescarred">Battle-Scarred</td>
+                            <td class="table-odds" id="table-prob-battlescarred"></td>
+                            <td class="table-odds" id="table-prob-battlescarred-stattrak"></td>
+                        </tr>
+                    </table>
+                    <table id="table-souvenir">
+                        <tr>
+                            <th>Rarity</th>
+                            <th>Probability</th>
+                        </tr>
+                        <tr>
+                            <td class="bold covert">Covert</td>
+                            <td class="table-odds" id="table-prob-covert-souvenir"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold classified">Classified</td>
+                            <td class="table-odds" id="table-prob-classified-souvenir"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold restricted">Restricted</td>
+                            <td class="table-odds" id="table-prob-restricted-souvenir"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold milspec">Mil-Spec</td>
+                            <td class="table-odds" id="table-prob-milspec-souvenir"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold industrialgrade">Industrial Grade</td>
+                            <td class="table-odds" id="table-prob-industrialgrade-souvenir"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold consumergrade">Consumer Grade</td>
+                            <td class="table-odds" id="table-prob-consumergrade-souvenir"></td>
+                        </tr>
+                    </table>
+                </div>
+            </p>
+        </div>
+        <div class="section" id="odds-visual">
+            <h2>Odds visualized</h2>
+            <hr />
+            <p>
+                Nothing here ZULUL Nothing here ZULUL Nothing here ZULUL Nothing here ZULUL Nothing here ZULUL
+            </p>
+        </div>
+    </div>
+    <div class="content-wrapper footer">
+        <p class="footer-content">
+            Game content, images, names and etc. are trademarks and copyrights of their respective publisher and its
+            licensors. All rights reserved.<br />This site is NOT affiliated with the game publisher.
+        </p>
+    </div>
+</body>
+
 </html>
