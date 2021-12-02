@@ -1,7 +1,0 @@
-AE 2020
-
-Camera Lens Blur
-	Blur Radius	30,0
-	Iris Properties
-		Shape		Decagon
-	Edge Behavior	☑ Repeat Edge Pixels

@@ -9,7 +9,7 @@ function docRdy(fn) {
 
 docRdy(() => {
     // Set random background
-    let num = Math.floor(Math.random() * 14) + 1
+    let num = Math.floor(Math.random() * 21) + 1
     document.getElementsByClassName("bg-image")[0].style.backgroundImage = "url(images/backgrounds/bg_" + num + ".png)"
 
     // Event listeners
