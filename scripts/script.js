@@ -93,6 +93,7 @@ function updateOdds() {
             document.getElementById("select-souvenir-tier-wrapper").style.display = "block";
             document.getElementById("select-souvenir-tier").style.display = "block";
             document.getElementById("table-souvenir").style.display = "table";
+            collectionChange()
             return
         case "stickercapsule":
             return
@@ -163,6 +164,9 @@ function collectionChange() {
             document.getElementById("table-prob-milspec-souvenir").innerText = "";
             document.getElementById("table-prob-industrialgrade-souvenir").innerText = "";
             document.getElementById("table-prob-consumergrade-souvenir").innerText = "";
+            return
+        default:
+            document.getElementById("img-container").src = "";
             return
     }
 }
